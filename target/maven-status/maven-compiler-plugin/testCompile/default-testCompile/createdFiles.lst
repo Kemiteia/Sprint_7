@@ -1,0 +1,10 @@
+Order\CreateOrderWithOneColorTest.class
+Courier\NotExistUserAuthTest.class
+Courier\NullPasswordCreateCourierTest.class
+Courier\CreateCourierTest.class
+Courier\LoginCourierTest.class
+Courier\NullLoginAuthCourierTest.class
+Order\GetOrdersListTest.class
+Courier\DuplicateCourierTest.class
+Order\CreateOderWithoutColorTest.class
+Order\CreateOrderWithBothColorsTest.class
