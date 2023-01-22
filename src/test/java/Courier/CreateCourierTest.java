@@ -27,8 +27,8 @@ public class CreateCourierTest {
     @Parameterized.Parameters(name = "{index}: login = {0},  password = {1}, firstName = {2}")
     public static Object[][] getTextData() {
         return new Object[][] {
-                {"fhdkcd", "1111", "Masha"},
-                {"hxhjxjxd", "2222", "Sasha"}
+                {"jghfhgfh", "1111", "Masha"},
+                {"uihjghfgdf", "2222", "Sasha"}
         };
     }
 
