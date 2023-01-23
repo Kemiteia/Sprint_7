@@ -1,4 +1,4 @@
-package Courier;
+package courier;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
@@ -7,8 +7,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
-import static Courier.CourierClient.createCourier;
-import static Courier.CourierClient.setUpAPI;
+import static courier.CourierClient.createCourier;
+import static courier.CourierClient.setUpAPI;
 import static org.hamcrest.Matchers.is;
 
 @RunWith(Parameterized.class)
@@ -27,8 +27,8 @@ public class CreateCourierTest {
     @Parameterized.Parameters(name = "{index}: login = {0},  password = {1}, firstName = {2}")
     public static Object[][] getTextData() {
         return new Object[][] {
-                {"jghfhgfh", "1111", "Masha"},
-                {"uihjghfgdf", "2222", "Sasha"}
+                {"bghfghgfh", "1111", "Masha"},
+                {"gfghgfhfh", "2222", "Sasha"}
         };
     }
 

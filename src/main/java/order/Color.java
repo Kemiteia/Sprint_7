@@ -1,4 +1,4 @@
-package Order;
+package order;
 
 public class Color {
     private String color;

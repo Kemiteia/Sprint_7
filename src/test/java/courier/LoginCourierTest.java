@@ -1,11 +1,11 @@
-package Courier;
+package courier;
 
 import io.qameta.allure.junit4.DisplayName;
 import jdk.jfr.Description;
 import org.junit.Before;
 import org.junit.Test;
 
-import static Courier.CourierClient.*;
+import static courier.CourierClient.*;
 
 public class LoginCourierTest {
 

@@ -1,4 +1,4 @@
-package Courier;
+package courier;
 
 public class CourierGenerator {
     public static Courier getCourierMasha() {

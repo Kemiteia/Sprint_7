@@ -1,9 +1,9 @@
-package Order;
+package order;
 
 import java.util.List;
 
-import static Order.Colors.BLACK;
-import static Order.Colors.GREY;
+import static order.Colors.BLACK;
+import static order.Colors.GREY;
 
 public class OrderGenerator {
     public static Order getOrder(String metroStationID) {

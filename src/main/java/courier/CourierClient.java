@@ -1,4 +1,4 @@
-package Courier;
+package courier;
 
 import io.qameta.allure.Step;
 import io.restassured.RestAssured;
@@ -64,24 +64,6 @@ public class CourierClient {
                 .header("Content-type", "application/json")
                 .body(courier)
                 .post(PATH);
-    }
-
-    @Step("Авторизация с пустым обязательным полем")
-    public static Response authCourierWithEmptyRequiredField(Courier courier) {
-        courier.setLogin(null);
-        return  given()
-                .header("Content-type", "application/json")
-                .body(courier)
-                .post(LOGIN);
-    }
-
-    @Step("Авторизация под несуществующим пользователем")
-    public static Response notExistUserAuth(Courier courier) {
-        courier.setLogin("fhjkndkjku");
-        return  given()
-                .header("Content-type", "application/json")
-                .body(courier)
-                .post(LOGIN);
     }
 
 }

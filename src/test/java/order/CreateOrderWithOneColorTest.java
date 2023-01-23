@@ -1,4 +1,4 @@
-package Order;
+package order;
 
 import io.qameta.allure.junit4.DisplayName;
 import jdk.jfr.Description;
@@ -6,7 +6,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
-import static Order.OrderClient.*;
+import static order.OrderClient.*;
 import static org.hamcrest.CoreMatchers.notNullValue;
 
 @RunWith(Parameterized.class)
@@ -17,7 +17,7 @@ public class CreateOrderWithOneColorTest {
         this.order = order;
     }
 
-    @Parameterized.Parameters()
+    @Parameterized.Parameters(name = "{index}: color = {0}")
     public static Object[][] getTextData() {
         return new Object[][] {
                 {orderBlackColor},

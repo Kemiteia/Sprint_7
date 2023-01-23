@@ -1,11 +1,11 @@
-package Courier;
+package courier;
 
 import io.qameta.allure.junit4.DisplayName;
 import jdk.jfr.Description;
 import org.junit.Before;
 import org.junit.Test;
 
-import static Courier.CourierClient.*;
+import static courier.CourierClient.*;
 import static org.hamcrest.Matchers.equalTo;
 
 public class DuplicateCourierTest {
@@ -21,9 +21,9 @@ public class DuplicateCourierTest {
     public void createDuplicateCourier() {
         createCourier(courierSasha)
                 .then()
-                .assertThat().body("message", equalTo("Этот логин уже используется. Попробуйте другой."))
+                .statusCode(409)
                 .and()
-                .statusCode(409);
+                .assertThat().body("message", equalTo("Этот логин уже используется. Попробуйте другой."));
     }
 
 }

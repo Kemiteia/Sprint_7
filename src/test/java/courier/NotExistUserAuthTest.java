@@ -1,14 +1,16 @@
-package Courier;
+package courier;
 
 import io.qameta.allure.junit4.DisplayName;
 import jdk.jfr.Description;
 import org.junit.Before;
 import org.junit.Test;
 
-import static Courier.CourierClient.*;
+import static courier.CourierClient.*;
 import static org.hamcrest.Matchers.equalTo;
 
 public class NotExistUserAuthTest {
+
+    Courier courier = new Courier("dfhjhsb", "1111", "Masha");
 
     @Before
     public void setUp() {
@@ -19,7 +21,7 @@ public class NotExistUserAuthTest {
     @DisplayName("Проверка авторизации под несуществующим пользователем")
     @Description("Если авторизоваться под несуществующим пользователем, запрос возвращает ошибку 'Учетная запись не найдена' и статус-код 404")
     public void NotExistUserAuth() {
-        notExistUserAuth(courierMasha)
+        authCourier(courier)
                 .then()
                 .assertThat().body("message", equalTo("Учетная запись не найдена"))
                 .and()

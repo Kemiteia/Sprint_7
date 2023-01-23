@@ -1,12 +1,12 @@
-package Order;
+package order;
 
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
 import org.junit.Before;
 import org.junit.Test;
 
-import static Order.OrderClient.getOrdersList;
-import static Order.OrderClient.setUpOrderAPI;
+import static order.OrderClient.getOrdersList;
+import static order.OrderClient.setUpOrderAPI;
 
 public class GetOrdersListTest {
 
