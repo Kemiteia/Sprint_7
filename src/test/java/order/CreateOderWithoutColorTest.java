@@ -19,9 +19,9 @@ public class CreateOderWithoutColorTest {
     public void createOrderWithoutColor() {
         createOrder(orderWithoutColor)
                 .then()
-                .assertThat().body("track", notNullValue())
+                .statusCode(201)
                 .and()
-                .statusCode(201);
+                .assertThat().body("track", notNullValue());
     }
 
 }

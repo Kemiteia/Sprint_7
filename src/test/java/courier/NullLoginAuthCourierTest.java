@@ -10,7 +10,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class NullLoginAuthCourierTest {
 
-    Courier courier = new Courier(null, "1111", "Masha");
+    private final Courier courier = new Courier(null, "1111", "Masha");
 
     @Before
     public void setUp() {
@@ -23,9 +23,9 @@ public class NullLoginAuthCourierTest {
     public void nullLoginAuthCourier() {
         authCourier(courier)
                 .then()
-                .assertThat().body("message", equalTo("Недостаточно данных для входа"))
+                .statusCode(400)
                 .and()
-                .statusCode(400);
+                .assertThat().body("message", equalTo("Недостаточно данных для входа"));
     }
 
 }

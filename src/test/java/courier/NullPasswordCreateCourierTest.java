@@ -21,8 +21,8 @@ public class NullPasswordCreateCourierTest {
     public void nullPasswordCreateCourier() {
         getResponseWithEmptyRequiredField(courierMasha)
                 .then()
-                .assertThat().body("message", equalTo("Недостаточно данных для создания учетной записи"))
+                .statusCode(400)
                 .and()
-                .statusCode(400);
+                .assertThat().body("message", equalTo("Недостаточно данных для создания учетной записи"));
     }
 }

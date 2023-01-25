@@ -3,6 +3,7 @@ package courier;
 import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import io.restassured.response.ValidatableResponse;
 
 import static io.restassured.RestAssured.given;
 
@@ -44,7 +45,7 @@ public class CourierClient {
 
     @Step("Запрос на удаление")
     public static String courierDeleteAPIStringBuild(int courierID) {
-        return PATH + courierID;
+        return PATH + "/" + courierID;
     }
 
     @Step("Удаление курьера")

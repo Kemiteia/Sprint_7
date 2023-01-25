@@ -31,8 +31,8 @@ public class CreateOrderWithOneColorTest {
     public void createOrderWithOneColor() {
         createOrder(order)
                 .then()
-                .assertThat().body("track", notNullValue())
+                .statusCode(201)
                 .and()
-                .statusCode(201);
+                .assertThat().body("track", notNullValue());
     }
 }

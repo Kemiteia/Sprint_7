@@ -7,8 +7,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
-import static courier.CourierClient.createCourier;
-import static courier.CourierClient.setUpAPI;
+import static courier.CourierClient.*;
 import static org.hamcrest.Matchers.is;
 
 @RunWith(Parameterized.class)
@@ -27,8 +26,8 @@ public class CreateCourierTest {
     @Parameterized.Parameters(name = "{index}: login = {0},  password = {1}, firstName = {2}")
     public static Object[][] getTextData() {
         return new Object[][] {
-                {"bghfghgfh", "1111", "Masha"},
-                {"gfghgfhfh", "2222", "Sasha"}
+                {"ghklj5265", "1111", "Masha"},
+                {"jhkl5452", "2222", "Sasha"}
         };
     }
 
@@ -43,9 +42,9 @@ public class CreateCourierTest {
     public void createCourierTest() {
         createCourier(new Courier(reqLogin, reqPassword, reqFirstName))
         .then()
-                .assertThat()
-                .body("ok", is(true))
+                .statusCode(201)
                 .and()
-                .statusCode(201);
+                .assertThat()
+                .body("ok", is(true));
     }
 }

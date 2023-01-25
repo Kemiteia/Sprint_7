@@ -3,7 +3,7 @@ package order;
 public class SingleOrderInObject {
     private Order order;
 
-    public SingleOrderInObject(Order order) {
+    public void SingleOrderInObject(Order order) {
         this.order = order;
     }
 

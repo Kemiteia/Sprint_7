@@ -10,7 +10,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class NotExistUserAuthTest {
 
-    Courier courier = new Courier("dfhjhsb", "1111", "Masha");
+    private final Courier courier = new Courier("dfhjhsb", "1111", "Masha");
 
     @Before
     public void setUp() {
@@ -23,8 +23,8 @@ public class NotExistUserAuthTest {
     public void NotExistUserAuth() {
         authCourier(courier)
                 .then()
-                .assertThat().body("message", equalTo("Учетная запись не найдена"))
+                .statusCode(404)
                 .and()
-                .statusCode(404);
+                .assertThat().body("message", equalTo("Учетная запись не найдена"));
     }
 }
